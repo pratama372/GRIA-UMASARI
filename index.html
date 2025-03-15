@@ -352,16 +352,20 @@
             <h2>CHECK IN-CHECK OUT</h2>
             <hr>
         <div class="book-container">
-            <div class="checkin-container">
-                 <input type="date" placeholder="Check-in">
-                 <input type="date" placeholder="Check-out">
-                <select>
-                    <option value="1">1 Room, 1 Guest</option>
-                    <option value="2">2 Rooms, 2 Guests</option>
-                    <option value="3">3 Rooms, 3 Guests</option>
-                </select>
-                <a href="#" class="book-now">BOOK NOW</a> 
-            </div>
+           <div class="checkin-container">
+    <label for="checkin">Check-in:</label>
+    <input type="date" id="checkin" aria-label="Check-in">
+    
+    <label for="checkout">Check-out:</label>
+    <input type="date" id="checkout" aria-label="Check-out">
+    
+    <label for="rooms">Rooms:</label>
+    <select id="rooms">
+        <option value="1">1 Room, 1 Guest</option>
+        <option value="2">2 Rooms, 2 Guests</option>
+        <option value="3">3 Rooms, 3 Guests</option>
+    </select>
+</div>
         </div>
         </div>
         </div>
