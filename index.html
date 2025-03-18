@@ -1,30 +1,63 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Gallery</title>
-    <link rel="stylesheet" href="css.css">
-</head>
-<body>
-    <header>
+<header>
         <div class="logo-info">
-            <div class="logo">
-                <img src="logo.png" alt="Logo Hotel">
-            </div>
+            <div class="logo"><img src="912269.jpg" alt="Logo Hotel GRIA UMASARI"></div>
             <div class="hotel-info">
-                <h1>Hotel Mewah</h1>
-                <a href="#book" class="book-now">Book Now</a>
+                <h1>GRIA UMASARI</h1>
+                <p><a href="https://maps.app.goo.gl/iRSbejrViH7anJET9">Jalan Sunset Road No. 88, Denpasar, Bali</a></p>  
+                <p><a href="tel:+623613021888">NO TEL</a></p>
             </div>
         </div>
+        <a href="#" class="book-now" onclick="openPopup('book')">BOOK NOW</a>
     </header>
+
+    <div class="popup" id="book">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('book')">&times;</span>
+            <h2>Booking Form</h2>
+            <form id="bookingForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+    
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+    
+                <label for="checkin">Check-in:</label>
+                <input type="date" id="checkin" name="checkin" required>
+    
+                <label for="checkout">Check-out:</label>
+                <input type="date" id="checkout" name="checkout" required>
+    
+                <label for="guests">Guests:</label>
+                <select id="guests" name="guests" required>
+                    <option value="1">1 Guest</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                </select>
+    
+                <label for="roomType">Room Type:</label>
+                <select id="roomType" name="roomType" required>
+                    <option value="single">Single Room</option>
+                    <option value="double">Double Room</option>
+                    <option value="suite">Suite</option>
+                </select>
+    
+                <button type="submit" class="book-now">Book Now</button>
+            </form>
+        </div>
+    </div>
+
     <div class="gallery">
         <div class="slideshow-container">
             <img class="slides" src="912269.jpg" alt="Slide 1">
             <img class="slides" src="5556687.jpg" alt="Slide 2">
             <img class="slides" src="11274787.jpg" alt="Slide 3">
-            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
             <button class="next" onclick="plusSlides(1)">&#10095;</button>
         </div>
     </div>
@@ -130,44 +163,67 @@
             </div>
         </div>
     </div>
-    <div class="map-container">
+    <section class="map-container">
         <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509123!2d144.9537353153163!3d-37.81627997975157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f0f0f0f%3A0x0!2sHotel%20Mewah!5e0!3m2!1sen!2sid!4v1616161616161" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31693.93323672837!2d115.1586539266745!3d-8.672207057409494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd240f4e5b0b6f1%3A0x401a5b51f9ccff0!2sDenpasar%2C%20Bali!5e0!3m2!1sen!2sid!4v1710269591394!5m2!1sen!2sid" allowfullscreen></iframe>
         </div>
         <div class="map-info">
             <h2>Lokasi Kami</h2>
-            <p>Hotel Mewah terletak di pusat kota, dekat dengan berbagai tempat wisata dan restoran terbaik.</p>
+            <p>GRIA UMASARI terletak di pusat kota Denpasar, memberikan akses mudah ke berbagai tempat wisata dan pusat perbelanjaan.</p>
+            <p><strong>Alamat:</strong> <a href="https://maps.app.goo.gl/iRSbejrViH7anJET9">Jalan Sunset Road No. 88, Denpasar, Bali</a></p>
+            <p><strong>Nama:</strong> <a href="https://maps.app.goo.gl/iRSbejrViH7anJET9">GRIA UMASARI</a></p>
+            <p><strong>Telepon:</strong> <a href="tel:+623613021888">+62 361 3021888</a></p>
         </div>
-    </div>
+    </section>
+
+    
+     <footer>
+        <p>&copy; 2025 GRIA UMASARI. All rights reserved.</p>
+    </footer>
+    
     <button class="scroll-top" onclick="scrollToTop()">Scroll to Top</button>
     <script>
-        let slideIndex = 0;
+         let slideIndex = 0;
         showSlides();
 
         function showSlides() {
             let slides = document.getElementsByClassName("slides");
             for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
+                slides[i].style.display = "none";
             }
             slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            slides[slideIndex - 1].style.display = "block";  
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
         }
 
         function plusSlides(n) {
-            slideIndex += n;
-            if (slideIndex < 1) {slideIndex = slides.length}
-            if (slideIndex > slides.length) {slideIndex = 1}
+            slideIndex += n - 1;
             showSlides();
         }
 
-        function openPopup(popupId) {
-            document.getElementById(popupId).style.display = "block";
+        function changeSlide(direction, carouselId) {
+            const slides = document.querySelector(`#${carouselId}`);
+            const totalSlides = slides.children.length;
+            let currentIndex = Array.from(slides.children).findIndex(slide => slide.style.display !== "none");
+            currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+            for (let i = 0; i < totalSlides; i++) {
+                slides.children[i].style.display = (i === currentIndex) ? "block" : "none";
+            }
         }
 
+        window.onscroll = function() {
+            let button = document.querySelector(".scroll-top");
+            button.style.display = window.scrollY > 100 ? "block" : "none";
+        };
+        }
+
+        function openPopup(popupId) {
+            document.getElementById(popupId).classList.add("show");
+        }
         function closePopup(popupId) {
-            document.getElementById(popupId).style.display = "none";
+            document.getElementById(popupId).classList.remove("show");
         }
 
         function changeSlide(n, carouselId) {
@@ -191,6 +247,25 @@
             } else {
                 scrollTopButton.style.display = "none";
             }
+            document.getElementById('bookingForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Mencegah pengiriman form default
+
+    // Ambil data dari form
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    const checkin = document.getElementById('checkin').value;
+    const checkout = document.getElementById('checkout').value;
+    const guests = document.getElementById('guests').value;
+    const roomType = document.getElementById('roomType').value;
+
+    // Tampilkan data booking
+    alert(`Booking Details:\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nCheck-in: ${checkin}\nCheck-out: ${checkout}\nGuests: ${guests}\nRoom Type: ${roomType}`);
+
+    // Reset form setelah pengiriman
+    this.reset();
+    closePopup('book'); // Menutup popup setelah pengiriman
+
         };
     </script>
 </body>
