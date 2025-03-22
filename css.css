@@ -198,18 +198,18 @@
             transform: scale(1);
             pointer-events: auto;
         }
-        .popup-content {
+       .popup-content {
             position: relative;
             background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 500px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 0.3s ease-in-out;
-        }
+            margin: 15% auto; /* Margin atas dan bawah 15%, margin kiri dan kanan auto untuk pusat */
+            padding: 20px; /* Padding di dalam popup */
+            border: 1px solid #888; /* Border */
+            width: 80%; /* Lebar popup 80% dari lebar viewport */
+            max-width: 500px; /* Lebar maksimum 500px */
+            border-radius: 10px; /* Sudut melengkung */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Bayangan */
+            animation: fadeIn 0.3s ease-in-out; /* Animasi saat muncul */
+       }
         .popup-content img {
             width: calc(100% - 40px); 
             height: auto; 
@@ -353,4 +353,10 @@
                 bottom: 10px;
                 right: 10px;
             }
-        }
+                .popup-content {
+                max-height: 80%; /* Tinggi maksimum 80% dari viewport */
+                overflow-y: auto; /* Tambahkan scroll jika konten melebihi tinggi maksimum */
+                margin: 5% auto; /* Margin atas 5% */
+                padding: 15px; /* Padding di dalam popup */
+    }
+}
