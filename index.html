@@ -6,7 +6,9 @@
     <title>Hotel Gallery</title>
     <link rel="stylesheet" href="css.css">
        
-<header>
+</head>
+<body>
+    <header>
         <div class="logo-info">
             <div class="logo"><img src="912269.jpg" alt="Logo Hotel GRIA UMASARI"></div>
             <div class="hotel-info">
@@ -91,14 +93,11 @@
                     <h2>KAMAR 1</h2>
                 </div>
                 <hr>
-                <div class="carousel">
-                    <button class="prev" onclick="changeSlide(-1, 'carousel1')">&#10094;</button>
-                    <div class="carousel-images" id="carousel1">
-                        <img src="912269.jpg" alt="Kamar 1-1">
-                        <img src="5556687.jpg" alt="Kamar 1-2">
-                        <img src="11274787.jpg" alt="Kamar 1-3">
-                    </div>
-                    <button class="next" onclick="changeSlide(1, 'carousel1')">&#10095;</button>
+                <img id="mainImage1" src="912269.jpg" alt="Kamar 1" style="width: 100%; height: auto; border-radius: 10px;">
+                <div class="thumbnail-container">
+                    <img src="912269.jpg" alt="Kamar 1 Thumbnail 1" onclick="changeMainImage('912269.jpg', 'mainImage1')">
+                    <img src="5556687.jpg" alt="Kamar 1 Thumbnail 2" onclick="changeMainImage('5556687.jpg', 'mainImage1')">
+                    <img src="11274787.jpg" alt="Kamar 1 Thumbnail 3" onclick="changeMainImage('11274787.jpg', 'mainImage1')">
                 </div>
                 <ul>
                     <li>Deskripsi Kamar 1</li>
@@ -121,14 +120,11 @@
                     <h2>KAMAR 2</h2>
                 </div>
                 <hr>
-                <div class="carousel">
-                    <button class="prev" onclick="changeSlide(-1, 'carousel2')">&#10094;</button>
-                    <div class="carousel-images" id="carousel2">
-                        <img src="912269.jpg" alt="Kamar 2-1">
-                        <img src="5556687.jpg" alt="Kamar 2-2">
-                        <img src="11274787.jpg" alt="Kamar 2-3">
-                    </div>
-                    <button class="next" onclick="changeSlide(1, 'carousel2')">&#10095;</button>
+                <img id="mainImage2" src="912269.jpg" alt="Kamar 2" style="width: 100%; height: auto; border-radius: 10px;">
+                <div class="thumbnail-container">
+                    <img src="912269.jpg" alt="Kamar 2 Thumbnail 1" onclick="changeMainImage('912269.jpg', 'mainImage2')">
+                    <img src="5556687.jpg" alt="Kamar 2 Thumbnail 2" onclick="changeMainImage('5556687.jpg', 'mainImage2')">
+                    <img src="11274787.jpg" alt="Kamar 2 Thumbnail 3" onclick="changeMainImage('11274787.jpg', 'mainImage2')">
                 </div>
                 <ul>
                     <li>Deskripsi Kamar 2</li>
@@ -151,15 +147,11 @@
                     <h2>KAMAR 3</h2>
                 </div>
                 <hr>
-                
-                <div class="carousel">
-                    <button class="prev" onclick="changeSlide(-1, 'carousel3')">&#10094;</button>
-                    <div class="carousel-images" id="carousel3">
-                        <img src="912269.jpg" alt="Kamar 3-1">
-                        <img src="5556687.jpg" alt="Kamar 3-2">
-                        <img src="11274787.jpg" alt="Kamar 3-3">
-                    </div>
-                    <button class="next" onclick="changeSlide(1, 'carousel3')">&#10095;</button>
+                <img id="mainImage3" src="912269.jpg" alt="Kamar 3" style="width: 100%; height: auto; border-radius: 10px;">
+                <div class="thumbnail-container">
+                    <img src="912269.jpg" alt="Kamar 3 Thumbnail 1" onclick="changeMainImage('912269.jpg', 'mainImage3')">
+                    <img src="5556687.jpg" alt="Kamar 3 Thumbnail 2" onclick="changeMainImage('5556687.jpg', 'mainImage3')">
+                    <img src="11274787.jpg" alt="Kamar 3 Thumbnail 3" onclick="changeMainImage('11274787.jpg', 'mainImage3')">
                 </div>
                 <ul>
                     <li>Deskripsi Kamar 3</li>
@@ -208,14 +200,8 @@
             showSlides();
         }
 
-        function changeSlide(direction, carouselId) {
-            const slides = document.querySelector(`#${carouselId}`);
-            const totalSlides = slides.children.length;
-            let currentIndex = Array.from(slides.children).findIndex(slide => slide.style.display !== "none");
-            currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
-            for (let i = 0; i < totalSlides; i++) {
-                slides.children[i].style.display = (i === currentIndex) ? "block" : "none";
-            }
+        function changeMainImage(imageSrc, mainImageId) {
+            document.getElementById(mainImageId).src = imageSrc;
         }
 
         window.onscroll = function() {
@@ -234,24 +220,23 @@
         }
 
         document.getElementById('bookingForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Mencegah pengiriman form default
+            event.preventDefault(); // Mencegah pengiriman form default
 
-    // Ambil data dari form
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const email = document.getElementById('email').value;
-    const checkin = document.getElementById('checkin').value;
-    const checkout = document.getElementById('checkout').value;
-    const guests = document.getElementById('guests').value;
-    const roomType = document.getElementById('roomType').value;
+            // Ambil data dari form
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const checkin = document.getElementById('checkin').value;
+            const checkout = document.getElementById('checkout').value;
+            const guests = document.getElementById('guests').value;
+            const roomType = document.getElementById('roomType').value;
 
-    // Tampilkan data booking
-    alert(`Booking Details:\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nCheck-in: ${checkin}\nCheck-out: ${checkout}\nGuests: ${guests}\nRoom Type: ${roomType}`);
+            // Tampilkan data booking
+            alert(`Booking Details:\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nCheck-in: ${checkin}\nCheck-out: ${checkout}\nGuests: ${guests}\nRoom Type: ${roomType}`);
 
-    // Reset form setelah pengiriman
-    this.reset();
-    closePopup('book'); // Menutup popup setelah pengiriman
-
+            // Reset form setelah pengiriman
+            this.reset();
+            closePopup('book'); // Menutup popup setelah pengiriman
         });
     </script>
 </body>
